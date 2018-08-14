@@ -7,19 +7,6 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'database_cleaner'
 
-require 'capybara/poltergeist'
-Phantomjs.path # Force install on require
-
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app,
-    {
-      phantomjs: Phantomjs.path,
-      js_errors: false,
-      phantomjs_options: ['--proxy-type=none'],
-      timeout: 180, debug: true
-    }
-  )
-end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

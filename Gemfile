@@ -50,8 +50,6 @@ group :development, :test do
   # Gems for frontend testing support
   gem 'teaspoon'
   gem 'teaspoon-mocha'
-  gem 'phantomjs', '1.9.7'
-  gem 'poltergeist'
   gem 'magic_lamp'
 end
 
@@ -78,6 +76,8 @@ group :test do
   gem 'shoulda-matchers'
   # Ensure clean database for frontend testing
   gem 'database_cleaner'
+  gem 'poltergeist'
+  gem 'phantomjs', '1.9.7'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
