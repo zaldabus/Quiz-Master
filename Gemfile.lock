@@ -127,7 +127,7 @@ GEM
       mimemagic (~> 0.3.2)
     method_source (0.9.0)
     mimemagic (0.3.2)
-    mini_mime (1.0.0)
+    mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     msgpack (1.2.4)
@@ -135,6 +135,8 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
+    open-iconic-rails (0.0.1)
+      rails (>= 3.1)
     pg (1.0.0)
     phantomjs (1.9.7.0)
     poltergeist (1.18.1)
@@ -271,6 +273,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   magic_lamp
+  open-iconic-rails
   pg
   phantomjs (= 1.9.7)
   poltergeist

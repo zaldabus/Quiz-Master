@@ -1,1 +1,11 @@
-index.html.erb
+<table class="table table-bordered table-hover table-striped">
+	<thead class="thead-light">
+		<tr>
+			<th scope="col">Question</th>
+			<th scope="col">Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render @quizzes %>
+	</tbody>
+</table>
