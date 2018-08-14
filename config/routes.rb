@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 	namespace :admin do
-		resources :quizzes
+		resources :quizzes, except: :show
 	end
 
 	namespace :api, defaults: { format: :json }, constraints: { subdomain: 'api' }, path: '/' do
