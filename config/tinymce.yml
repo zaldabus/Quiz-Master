@@ -1,5 +1,4 @@
 toolbar:
-  - styleselect | bold italic | undo redo
-  - link
+  - undo redo | styleselect | bold italic | link
 plugins:
   - link
