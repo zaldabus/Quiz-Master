@@ -1,0 +1,9 @@
+<%= simple_form_for quiz, url: [:admin, quiz], html: { class: 'quiz_form clearfix' } do |f| %>
+	<%= f.input :question %>
+	<%= f.input :answer %>
+
+	<div class="action-buttons">
+		<%= f.submit 'Save', class: 'btn btn-primary save-btn' %>
+		<%= link_to open_iconic(:svg, :x), admin_quizzes_path, class: 'btn btn-danger white-svg cancel-icon' %>
+	</div>
+<% end %>

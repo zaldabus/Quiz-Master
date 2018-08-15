@@ -14,17 +14,38 @@ header {
 		float: right;
 		width: 100px;
 		padding: 10px;
-
-		.add-link {
-			display: inline-block;
-			width: 20px;
-			height: 20px;
-			fill: white;
-		}
 	}
+}
+
+.white-svg {
+	display: inline-block;
+	fill: white;
+}
+
+.add-icon {
+	width: 20px;
+}
+
+.cancel-icon {
+	width: 40px;
 }
 
 .del-col {
 	width: 100px;
 	text-align: center;
+}
+
+.quiz_form {
+	border: #007bff 5px solid;
+  border-radius: 5px;
+	padding: 20px 40px 15px;
+  background: lightgrey;
+
+	.action-buttons {
+		float: right;
+
+		.save-btn {
+			width: 100px;
+		}
+	}
 }
