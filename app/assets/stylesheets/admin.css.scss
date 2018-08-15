@@ -1,2 +1,30 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+#content {
+	margin: 40px 200px;
+}
+
+header {
+	h1 {
+		float: left;
+	}
+
+	.add-btn {
+		float: right;
+		width: 100px;
+		padding: 10px;
+
+		.add-link {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			fill: white;
+		}
+	}
+}
+
+.del-col {
+	width: 100px;
+	text-align: center;
+}

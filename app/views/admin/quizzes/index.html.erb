@@ -1,8 +1,15 @@
+<header>
+	<h1>Quizzes</h1>
+	<button type="button" class="btn btn-primary add-btn">
+		<%= link_to open_iconic(:svg, :plus), new_admin_quiz_path, class: "add-link" %>
+	</button>
+</header>
+
 <table class="table table-bordered table-hover table-striped">
 	<thead class="thead-light">
 		<tr>
 			<th scope="col">Question</th>
-			<th scope="col">Delete</th>
+			<th scope="col" class="del-col">Delete</th>
 		</tr>
 	</thead>
 	<tbody>
