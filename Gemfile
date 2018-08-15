@@ -31,6 +31,9 @@ gem 'jquery-rails'
 gem 'open-iconic-rails'
 # Rich text editor for forms
 gem 'tinymce-rails'
+# Support for React on top of Rails
+gem "react_on_rails", "11.1.1"
+gem "webpacker", "~> 3"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
