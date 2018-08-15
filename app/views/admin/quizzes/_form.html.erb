@@ -1,5 +1,5 @@
 <%= simple_form_for quiz, url: [:admin, quiz], html: { class: 'quiz_form clearfix' } do |f| %>
-	<%= f.input :question, as: :text, input_html: { class: 'tinymce' } %>
+	<%= f.input :question, input_html: { class: 'tinymce' } %>
 	<%= f.input :answer %>
 
 	<div class="action-buttons">
