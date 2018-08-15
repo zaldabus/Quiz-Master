@@ -29,6 +29,8 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 # Open Iconic Library
 gem 'open-iconic-rails'
+# Rich text editor for forms
+gem 'tinymce-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

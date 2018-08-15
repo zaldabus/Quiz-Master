@@ -36,4 +36,10 @@ class Admin::QuizzesController < AdminController
 		@quiz.destroy
 		redirect_to admin_quizzes_path
 	end
+
+	private
+
+	def quiz_params
+		params.require(:quiz).permit(:question, :answer)
+	end
 end
