@@ -33,6 +33,16 @@ header {
 .del-col {
 	width: 100px;
 	text-align: center;
+
+	.del-btn {
+		border: none;
+    background: inherit;
+    cursor: pointer;
+
+    .svg {
+    	width: 20px;
+    }
+	}
 }
 
 .quiz_form {

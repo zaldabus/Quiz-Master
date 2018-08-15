@@ -1,4 +1,7 @@
 <tr>
-  <th scope="row"><%= truncate(strip_tags(quiz.question), length:100, omission: '... (continued)') %></th>
-  <td scope="row" class="del-col"><%= open_iconic :svg, :trash %></td>
+  <th scope="row"><%= link_to truncate(strip_tags(quiz.question), length:100, omission: '...(continued)'), edit_admin_quiz_path(quiz) %></th>
+  <td scope="row" class="del-col"><%= button_to(admin_quiz_path(quiz), class: 'del-btn', method: :delete) do %>
+  	<%= open_iconic(:svg, :trash) %>
+	<% end %>
+  </td>
 </tr>
