@@ -2,6 +2,6 @@ class QuizModeController < ActionController::Base
 	layout 'quiz_mode'
 
 	def index
-		@hello_world_props = { name: "Bob" }
+		@quizzes = { quizzes: Quiz.all }
 	end
 end
