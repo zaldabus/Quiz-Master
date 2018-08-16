@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Quiz from './Quiz';
+import guessIsCorrect from '../utils/guessIsCorrect';
 
 class QuizMode extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class QuizMode extends React.Component {
     let answerGuess = this.props.answerGuess;
     let answer = this.props.quiz.answer;
 
-    if (answerGuess == answer) {
+    if (guessIsCorrect(answerGuess, answer)) {
       this.props.setCorrect();
     } else {
       this.props.setIncorrect();
