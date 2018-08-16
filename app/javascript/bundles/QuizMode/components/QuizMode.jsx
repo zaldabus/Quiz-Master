@@ -3,16 +3,60 @@ import React from 'react';
 
 import Quiz from './Quiz';
 
-const QuizMode = ({ quizzes }) => (
-  <div className="quizzes">
-    {quizzes.map(quiz =>
-      <Quiz key={quiz.id} quiz={quiz}/>
-    )}
-  </div>
-);
+class QuizMode extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.replaceQuiz = this.replaceQuiz.bind(this);
+  }
+
+  handleChange(event) {
+    let answerGuess = event.target.value;
+
+    return this.props.updateAnswerGuess(answerGuess);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    let answerGuess = this.props.answerGuess;
+    let answer = this.props.quiz.answer;
+
+    if (answerGuess == answer) {
+      this.props.setCorrect();
+    } else {
+      this.props.setIncorrect();
+    }
+  }
+
+  replaceQuiz() {
+    let quizId = this.props.quiz.id;
+
+    this.props.changeQuiz(quizId);
+  }
+
+  render() {
+    return (
+      <div className="quiz">
+        <Quiz
+          key={this.props.quiz.id}
+          quiz={this.props.quiz}
+          answerGuess={this.props.answerGuess}
+          guessStatus={this.props.guessStatus}
+          onChange={this.handleChange}
+          onSubmit={this.handleSubmit}
+          changeQuiz={this.replaceQuiz}
+          tryAgain={this.props.tryAgain}
+        />
+      </div>
+    );
+  }
+}
 
 QuizMode.propTypes = {
-  quizzes: PropTypes.array.isRequired
+  quiz: PropTypes.object.isRequired
 };
 
 export default QuizMode;

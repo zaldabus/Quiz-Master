@@ -2,6 +2,6 @@ class QuizModeController < ActionController::Base
 	layout 'quiz_mode'
 
 	def index
-		@quizzes = { quizzes: Quiz.all }
+		@quiz = { quiz: Quiz.first, guessStatus: '', answerGuess: '' }
 	end
 end

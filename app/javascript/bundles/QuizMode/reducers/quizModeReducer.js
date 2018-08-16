@@ -1,15 +1,46 @@
 import { combineReducers } from 'redux';
-import { HELLO_WORLD_NAME_UPDATE } from '../constants/quizModeConstants';
+import {
+	QUIZ_MODE_ANSWER_CORRECT,
+	QUIZ_MODE_ANSWER_INCORRECT,
+	QUIZ_MODE_QUIZ_CHANGE,
+	UPDATE_ANSWER_GUESS,
+	QUIZ_MODE_RESET
+} from '../constants/quizModeConstants';
 
-const quizzes = (state = '', action) => {
-  switch (action.type) {
-    case HELLO_WORLD_NAME_UPDATE:
-      return action.text;
+const quiz = (state = '', action) => {
+	switch (action.type) {
+    case QUIZ_MODE_QUIZ_CHANGE:
+    	console.log(action.quizId);
+      return state;
     default:
       return state;
   }
 };
 
-const quizModeReducer = combineReducers({ quizzes });
+const guessStatus = (state = '', action) => {
+	switch (action.type) {
+    case QUIZ_MODE_ANSWER_CORRECT:
+      return 'correct';
+    case QUIZ_MODE_ANSWER_INCORRECT:
+      return 'incorrect';
+    case QUIZ_MODE_RESET:
+    	return '';
+    default:
+      return state;
+  }
+}
+
+const answerGuess = (state = '', action) => {
+	switch(action.type) {
+		case UPDATE_ANSWER_GUESS:
+			return action.guess;
+		case QUIZ_MODE_RESET:
+			return '';
+		default:
+			return state;
+	}
+}
+
+const quizModeReducer = combineReducers({ quiz, guessStatus, answerGuess });
 
 export default quizModeReducer;
