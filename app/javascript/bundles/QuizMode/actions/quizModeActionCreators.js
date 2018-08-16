@@ -1,4 +1,5 @@
 /* eslint-disable import/prefer-default-export */
+import axios from 'axios';
 
 import {
 	QUIZ_MODE_ANSWER_CORRECT,
@@ -25,7 +26,20 @@ export const tryAgain = () => ({
 	type: QUIZ_MODE_RESET
 });
 
-export const changeQuiz = (quizId) => ({
-  type: QUIZ_MODE_QUIZ_CHANGE,
-  quizId
+export const changeQuizSuccess = (quiz) => ({
+	type: QUIZ_MODE_QUIZ_CHANGE,
+	quiz
 });
+
+export const changeQuiz = (quizId) => {
+	return dispatch => axios.get('/api/v1/quizzes/request_quiz', {
+      params: {
+          quiz_id: quizId
+      }
+  }).then(res => {
+  	let quiz = res.data;
+
+  	dispatch(tryAgain());
+  	dispatch(changeQuizSuccess(quiz));
+	});
+};

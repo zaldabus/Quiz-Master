@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 		resources :quizzes, except: :show
 	end
 
-	namespace :api, defaults: { format: :json }, constraints: { subdomain: 'api' }, path: '/' do
+	namespace :api, defaults: { format: :json } do
 		namespace :v1 do
 			controller :quizzes do
-				get 'quizzes/request_quizzes', action: :request_quizzes
+				get 'quizzes/request_quiz', action: :request_quiz
 			end
 		end
 	end

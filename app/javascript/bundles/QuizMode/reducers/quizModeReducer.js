@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import {
 	QUIZ_MODE_ANSWER_CORRECT,
 	QUIZ_MODE_ANSWER_INCORRECT,
@@ -10,8 +11,7 @@ import {
 const quiz = (state = '', action) => {
 	switch (action.type) {
     case QUIZ_MODE_QUIZ_CHANGE:
-    	console.log(action.quizId);
-      return state;
+      return action.quiz;
     default:
       return state;
   }
