@@ -1,2 +1,41 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+.quiz-mode {
+	max-width: 550px;
+	margin: auto;
+
+	form {
+		padding: 20px;
+		border: #007bff 5px solid;
+	 	border-radius: 5px;
+		background: lightgrey;
+
+		&.correct {
+			background: lightgreen;
+		}
+
+		&.incorrect {
+			background: lightpink;
+		}
+
+		.question {
+			width: 100%;
+			margin-bottom: 0;
+		}
+
+		.input-items {
+			display: flex;
+
+			.guess {
+				width: 75%;
+				margin-right: 20px;
+				line-height: 25px;
+		    border-radius: 0px;
+		    padding: 5px 10px;
+		    font-size: 18px;
+		    flex-grow: 1;
+			}
+		}
+	}
+}

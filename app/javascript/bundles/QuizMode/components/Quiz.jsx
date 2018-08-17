@@ -1,20 +1,22 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import ActionButton from './ActionButton'
+
 const Quiz = ({ quiz, answerGuess, guessStatus, onChange, onSubmit, changeQuiz, tryAgain }) => (
-  <div className="{key}">
-  	<form className={guessStatus} onSubmit={onSubmit}>
-	    <label dangerouslySetInnerHTML={{__html: quiz.question}}></label>
-	    {guessStatus == 'correct' &&
-	    	<button onClick={changeQuiz}>Next Quiz?</button>
-		  }
-		  {guessStatus == 'incorrect' &&
-		  	<button onClick={tryAgain}>Try Again</button>
-		  }
-	    <input type="text" value={answerGuess} onChange={onChange}/>
-	    <input type="submit" value="Submit" />
-    </form>
-  </div>
+	<form className={guessStatus} onSubmit={onSubmit}>
+    <label className="question" dangerouslySetInnerHTML={{__html: quiz.question}}></label>
+    <div className="input-items">
+	    <input
+	    	type="text"
+	    	value={answerGuess}
+	    	className="guess"
+	    	onChange={onChange}
+	    	disabled={guessStatus == '' ? "" : "disabled"}
+    	/>
+	    <ActionButton guessStatus={guessStatus} changeQuiz={changeQuiz} tryAgain={tryAgain} />
+    </div>
+  </form>
 );
 
 Quiz.propTypes = {

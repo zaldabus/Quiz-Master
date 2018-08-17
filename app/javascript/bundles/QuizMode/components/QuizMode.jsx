@@ -40,7 +40,7 @@ class QuizMode extends React.Component {
 
   render() {
     return (
-      <div className="quiz">
+      <div className="quiz-mode">
         <Quiz
           key={this.props.quiz.id}
           quiz={this.props.quiz}
