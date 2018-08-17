@@ -6,7 +6,7 @@ import {
 	QUIZ_MODE_ANSWER_CORRECT,
 	QUIZ_MODE_ANSWER_INCORRECT,
 	QUIZ_MODE_CHANGE_SUCCESS,
-	UPDATE_ANSWER_GUESS,
+	UPDATE_GUESS,
 	QUIZ_MODE_RESET
 } from '../constants/quizModeConstants';
 
@@ -19,7 +19,7 @@ export const setIncorrect = () => ({
 });
 
 export const updateAnswerGuess = (guess) => ({
-	type: UPDATE_ANSWER_GUESS,
+	type: UPDATE_GUESS,
 	guess
 });
 

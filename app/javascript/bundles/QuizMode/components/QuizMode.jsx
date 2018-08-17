@@ -14,18 +14,18 @@ class QuizMode extends React.Component {
   }
 
   handleChange(event) {
-    let answerGuess = event.target.value;
+    let guess = event.target.value;
 
-    return this.props.updateAnswerGuess(answerGuess);
+    return this.props.updateAnswerGuess(guess);
   }
 
   handleSubmit(event) {
     event.preventDefault();
 
-    let answerGuess = this.props.answerGuess;
+    let guess = this.props.guess;
     let answer = this.props.quiz.answer;
 
-    if (guessIsCorrect(answerGuess, answer)) {
+    if (guessIsCorrect(guess, answer)) {
       this.props.setCorrect();
     } else {
       this.props.setIncorrect();
@@ -43,7 +43,7 @@ class QuizMode extends React.Component {
       <div className="quiz-mode">
         <Quiz
           quiz={this.props.quiz}
-          answerGuess={this.props.answerGuess}
+          guess={this.props.guess}
           guessStatus={this.props.guessStatus}
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
@@ -58,7 +58,7 @@ class QuizMode extends React.Component {
 
 QuizMode.propTypes = {
   quiz: PropTypes.object.isRequired,
-  answerGuess: PropTypes.string.isRequired,
+  guess: PropTypes.string.isRequired,
   guessStatus: PropTypes.string.isRequired,
   tryAgain: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired

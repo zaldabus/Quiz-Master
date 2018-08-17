@@ -5,7 +5,7 @@ class QuizModeController < ActionController::Base
 		@quiz = {
 			quiz: Quiz.order("RANDOM()").first,
 			guessStatus: '',
-			answerGuess: '',
+			guess: '',
 			ajaxCallsInProgress: 0
 		}
 	end

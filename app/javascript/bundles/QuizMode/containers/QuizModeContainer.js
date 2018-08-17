@@ -5,7 +5,7 @@ import * as actions from '../actions/quizModeActionCreators';
 const mapStateToProps = (state) => ({
 	quiz: state.quiz,
 	guessStatus: state.guessStatus,
-	answerGuess: state.answerGuess,
+	guess: state.guess,
 	loading: state.ajaxCallsInProgress > 0,
 });
 

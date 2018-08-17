@@ -22,4 +22,10 @@ class ActionButton extends React.Component {
 	}
 }
 
+ActionButton.propTypes = {
+	guessStatus: PropTypes.string.isRequired,
+	changeQuiz: PropTypes.func.isRequired,
+	tryAgain: PropTypes.func.isRequired
+}
+
 export default ActionButton;
