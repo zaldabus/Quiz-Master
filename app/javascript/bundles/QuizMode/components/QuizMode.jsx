@@ -42,7 +42,6 @@ class QuizMode extends React.Component {
     return (
       <div className="quiz-mode">
         <Quiz
-          key={this.props.quiz.id}
           quiz={this.props.quiz}
           answerGuess={this.props.answerGuess}
           guessStatus={this.props.guessStatus}
@@ -50,6 +49,7 @@ class QuizMode extends React.Component {
           onSubmit={this.handleSubmit}
           changeQuiz={this.replaceQuiz}
           tryAgain={this.props.tryAgain}
+          loading={this.props.loading}
         />
       </div>
     );
@@ -57,7 +57,11 @@ class QuizMode extends React.Component {
 }
 
 QuizMode.propTypes = {
-  quiz: PropTypes.object.isRequired
+  quiz: PropTypes.object.isRequired,
+  answerGuess: PropTypes.string.isRequired,
+  guessStatus: PropTypes.string.isRequired,
+  tryAgain: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired
 };
 
 export default QuizMode;

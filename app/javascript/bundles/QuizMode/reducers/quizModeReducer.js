@@ -1,17 +1,18 @@
 import { combineReducers } from 'redux';
 
+import ajaxCallsInProgress from './ajaxStatusReducer'
 import {
 	QUIZ_MODE_ANSWER_CORRECT,
 	QUIZ_MODE_ANSWER_INCORRECT,
-	QUIZ_MODE_QUIZ_CHANGE,
+	QUIZ_MODE_CHANGE_SUCCESS,
 	UPDATE_ANSWER_GUESS,
 	QUIZ_MODE_RESET
 } from '../constants/quizModeConstants';
 
 const quiz = (state = '', action) => {
 	switch (action.type) {
-    case QUIZ_MODE_QUIZ_CHANGE:
-      return action.quiz;
+    case QUIZ_MODE_CHANGE_SUCCESS:
+    	return action.quiz;
     default:
       return state;
   }
@@ -41,6 +42,6 @@ const answerGuess = (state = '', action) => {
 	}
 }
 
-const quizModeReducer = combineReducers({ quiz, guessStatus, answerGuess });
+const quizModeReducer = combineReducers({ quiz, guessStatus, answerGuess, ajaxCallsInProgress });
 
 export default quizModeReducer;
