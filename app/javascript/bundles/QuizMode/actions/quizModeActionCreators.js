@@ -36,7 +36,7 @@ export const changeQuiz = (quizId) => {
 	return dispatch => {
 		dispatch(beginAjaxCall());
 
-		axios.get('/api/v1/quizzes/request_quiz', {
+		return axios.get('/api/v1/quizzes/request_quiz', {
       params: {
           quiz_id: quizId
       }
