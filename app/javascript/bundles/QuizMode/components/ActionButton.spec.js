@@ -19,4 +19,22 @@ describe('ActionButton', () => {
 
 		expect(wrapper.find('.btn').props().value).toEqual('Submit');
 	});
+
+	it('shows a button with Try Again when guessStatus equals incorrect', () => {
+		const wrapper = setup('incorrect');
+
+		expect(wrapper.find('.btn').text()).toEqual('Try Again');
+	});
+
+	it('shows a button with Next Quiz? when guessStatus equals correct', () => {
+		const wrapper = setup('correct');
+
+		expect(wrapper.find('.btn').text()).toEqual('Next Quiz?');
+	});
+
+	it('shows the default Submit button for any other value of guessStatus', () => {
+		const wrapper = setup('this is bananas');
+
+		expect(wrapper.find('.btn').props().value).toEqual('Submit');
+	});
 });
