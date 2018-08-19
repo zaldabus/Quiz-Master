@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "test": "mocha --reporter spec config/testSetup.js \"app/**/*.spec.js\"",
-    "test-watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
     "@rails/webpacker": "3.5",
