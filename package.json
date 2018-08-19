@@ -1,6 +1,10 @@
 {
   "name": "quiz_master",
   "private": true,
+  "scripts": {
+    "test": "mocha --reporter spec config/testSetup.js \"app/**/*.spec.js\"",
+    "test-watch": "npm run test -- --watch"
+  },
   "dependencies": {
     "@rails/webpacker": "3.5",
     "axios": "^0.18.0",
@@ -15,6 +19,13 @@
     "written-number": "^0.8.1"
   },
   "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "enzyme": "^3.4.4",
+    "expect": "^23.5.0",
+    "jsdom": "11.11.0",
+    "mocha": "^5.2.0",
+    "react-addons-test-utils": "^15.6.2",
     "webpack-dev-server": "2.11.2"
   }
 }
