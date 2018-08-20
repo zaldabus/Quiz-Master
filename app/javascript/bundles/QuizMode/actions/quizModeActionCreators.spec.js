@@ -17,7 +17,7 @@ describe('Async Actions', () => {
 
   describe('quizModeActionCreators Thunk', () => {
     it('should create BEGIN_AJAX_CALL, QUIZ_MODE_RESET, and QUIZ_MODE_CHANGE_SUCCESS types when changing quizzes', (done) => {
-      nock('http://example.com/')
+      nock('http://localhost:3000')
         .get('/api/v1/quizzes/request_quiz')
       	.query({
       		quiz_id: (123)
