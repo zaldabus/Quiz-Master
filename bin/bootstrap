@@ -1,0 +1,44 @@
+#!/bin/sh
+
+echo "*** This assumes you have postgresql, yarn, RVM, and a ruby
+like `cat .ruby-version`."
+
+ROOT=`pwd`
+DATABASE_DOT_YAML="${ROOT}/config/database.yml"
+DATABASE_DOT_YAML_TPL="${ROOT}/config/database.template.yml"
+
+if [ -f $DATABASE_DOT_YAML ]; then
+  echo "*** It looks like you have ${DATABASE_DOT_YAML} so we're not clobbering it. You're welcome!"
+  echo "*** Make sure everything in ${DATABASE_DOT_YAML} is correct and looks kinda like ${DATABASE_DOT_YAML_TPL}"
+else
+  echo "*** Copying ${DATABASE_DOT_YAML_TPL} to ${DATABASE_DOT_YAML}..."
+  echo "*** Don't forget to change your username and password if necessary"
+  cp $DATABASE_DOT_YAML_TPL $DATABASE_DOT_YAML
+fi
+
+echo "*** Installing bundler..."
+gem install bundler
+
+echo "*** Running bundler..."
+bundle
+
+echo "*** Running yarn..."
+yarn
+
+echo "*** Migrating the database..."
+bundle exec rake db:migrate
+
+echo "*** Preparing the test DB..."
+bundle exec rake db:test:prepare
+
+echo "*** Running Rspec tests..."
+bundle exec rspec
+
+echo "*** Running Mocha tests..."
+yarn run test
+
+echo "*** Installing foreman..."
+gem install foreman
+
+echo "Booting up with foreman..."
+foreman start -f Procfile.dev

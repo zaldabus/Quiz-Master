@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Prerequisites
+1. Postgres is installed and working
+2. Yarn is installed on your system (see [Install Instructions for Yarn](https://yarnpkg.com/lang/en/docs/install))
+3. RVM is installed and working with version in .ruby-version
 
-Things you may want to cover:
+# Setup
+There's a "bootstrap" script that runs many of the common setup tasks for you. From the app root, run:
+```
+bin/bootstrap
+```
 
-* Ruby version
+# Bootup
+This app uses Foreman to manage Rails and React simultaneously. The bootup this program run the following:
+```
+foreman start -f Procfile.dev
+```
 
-* System dependencies
+This assumes you have installed Foreman either before pulling this application or via the provided bootstrap script
 
-* Configuration
+# Tests
+In order to run the ruby specs, do the following:
 
-* Database creation
+```
+bundle exec rspec
+```
 
-* Database initialization
+In order to run the mocha specs, do the following:
 
-* How to run the test suite
+```
+yarn run test
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Alternatively you can watch the tests for changes and have the system run tests automatically when saving:
+```
+yarn run test:watch
+```
