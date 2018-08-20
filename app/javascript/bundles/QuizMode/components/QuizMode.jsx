@@ -61,6 +61,10 @@ QuizMode.propTypes = {
   guess: PropTypes.string.isRequired,
   guessStatus: PropTypes.string.isRequired,
   resetQuiz: PropTypes.func.isRequired,
+  updateGuess: PropTypes.func.isRequired,
+  setCorrect: PropTypes.func.isRequired,
+  setIncorrect: PropTypes.func.isRequired,
+  changeQuiz: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired
 };
 

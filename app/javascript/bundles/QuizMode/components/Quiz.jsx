@@ -28,7 +28,6 @@ Quiz.propTypes = {
 	onChange: PropTypes.func.isRequired,
 	onSubmit: PropTypes.func.isRequired,
 	changeQuiz: PropTypes.func.isRequired,
-	resetQuiz: PropTypes.func.isRequired,
 	loading: PropTypes.bool.isRequired
 };
 

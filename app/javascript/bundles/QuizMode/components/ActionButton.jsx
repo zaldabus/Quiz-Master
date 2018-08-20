@@ -7,7 +7,7 @@ class ActionButton extends React.Component {
 			case 'correct':
 				return <button className="btn btn-success" onClick={this.props.changeQuiz}>Next Quiz?</button>;
 			case 'incorrect':
-				return <button className="btn btn-danger" onClick={this.props.tryAgain}>Try Again</button>;
+				return <button className="btn btn-danger" onClick={this.props.resetQuiz}>Try Again</button>;
 			default:
 				return <input className="btn btn-primary" type="submit" value="Submit" />;
 		}
@@ -25,7 +25,7 @@ class ActionButton extends React.Component {
 ActionButton.propTypes = {
 	guessStatus: PropTypes.string.isRequired,
 	changeQuiz: PropTypes.func.isRequired,
-	tryAgain: PropTypes.func.isRequired
+	resetQuiz: PropTypes.func.isRequired
 }
 
 export default ActionButton;
