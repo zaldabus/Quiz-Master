@@ -28,13 +28,11 @@ var Adapter = require('enzyme-adapter-react-16');
 
 enzyme.configure({ adapter: new Adapter() });
 
-// Force Axios to use HTTP adapter and localhost for tests.
-// This is due to buggy communication between Jsdom and Axios
-// where Axios thinks its running in a browser because the
-// value XMLHttpRequest is defined.
+// Force Axios to use predefined baseURL for tests
+// This is to ensure nock can properly intercept
+// the calls and mock them out
 var axios = require('axios');
-axios.defaults.baseURL = 'http://localhost:3000';
-axios.defaults.adapter = require('axios/lib/adapters/http');
+axios.defaults.baseURL = 'http://randomurl.of.course';
 
 // Disable webpack-specific features for tests since
 // Mocha doesn't know what to do with them.

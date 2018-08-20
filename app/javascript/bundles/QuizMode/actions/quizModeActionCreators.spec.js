@@ -1,5 +1,6 @@
 import expect from 'expect';
 import thunk from 'redux-thunk';
+import axios from 'axios';
 import nock from 'nock';
 import configureMockStore from 'redux-mock-store';
 
@@ -17,7 +18,7 @@ describe('Async Actions', () => {
 
   describe('quizModeActionCreators Thunk', () => {
     it('should create BEGIN_AJAX_CALL, QUIZ_MODE_RESET, and QUIZ_MODE_CHANGE_SUCCESS types when changing quizzes', (done) => {
-      nock('http://localhost:3000')
+      nock(axios.defaults.baseURL)
         .get('/api/v1/quizzes/request_quiz')
       	.query({
       		quiz_id: (123)
