@@ -14,7 +14,7 @@ bin/bootstrap
 # Bootup
 This app uses Foreman to manage Rails and React simultaneously. To bootup this program run the following:
 ```
-foreman start -f Procfile.dev
+foreman start -f Procfile.dev-server
 ```
 
 This assumes you have installed Foreman either before pulling this application or via the provided bootstrap script
