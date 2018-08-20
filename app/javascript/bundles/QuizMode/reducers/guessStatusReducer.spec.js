@@ -22,7 +22,7 @@ describe('Guess Status Reducer', () => {
 
  it('should reset the state value of guessStatus when passed QUIZ_MODE_RESET', () => {
  		const initialState = '';
- 		const action = actions.tryAgain();
+ 		const action = actions.resetQuiz();
  		const newState = guessStatus(initialState, action);
 
  		expect(newState).toEqual('');

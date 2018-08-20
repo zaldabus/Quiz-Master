@@ -16,7 +16,7 @@ class QuizMode extends React.Component {
   handleChange(event) {
     let guess = event.target.value;
 
-    return this.props.updateAnswerGuess(guess);
+    return this.props.updateGuess(guess);
   }
 
   handleSubmit(event) {
@@ -48,7 +48,7 @@ class QuizMode extends React.Component {
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
           changeQuiz={this.replaceQuiz}
-          tryAgain={this.props.tryAgain}
+          resetQuiz={this.props.resetQuiz}
           loading={this.props.loading}
         />
       </div>
@@ -60,7 +60,7 @@ QuizMode.propTypes = {
   quiz: PropTypes.object.isRequired,
   guess: PropTypes.string.isRequired,
   guessStatus: PropTypes.string.isRequired,
-  tryAgain: PropTypes.func.isRequired,
+  resetQuiz: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired
 };
 

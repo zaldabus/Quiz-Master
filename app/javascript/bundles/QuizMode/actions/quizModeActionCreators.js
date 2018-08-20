@@ -18,12 +18,12 @@ export const setIncorrect = () => ({
   type: QUIZ_MODE_ANSWER_INCORRECT
 });
 
-export const updateAnswerGuess = (guess) => ({
+export const updateGuess = (guess) => ({
 	type: UPDATE_GUESS,
 	guess
 });
 
-export const tryAgain = () => ({
+export const resetQuiz = () => ({
 	type: QUIZ_MODE_RESET
 });
 
@@ -43,7 +43,7 @@ export const changeQuiz = (quizId) => {
 	  }).then(res => {
 	  	const quiz = res.data;
 
-	  	dispatch(tryAgain());
+	  	dispatch(resetQuiz());
 	  	dispatch(changeQuizSuccess(quiz));
 		}).catch(error => {
 			dispatch(ajaxCallError(error));
