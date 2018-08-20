@@ -14,6 +14,4 @@ Rails.application.routes.draw do
 	namespace :quiz_mode, path: '/' do
 		root to: :index, action: :index
 	end
-
-  mount MagicLamp::Genie, at: "/magic_lamp" if defined?(MagicLamp)
 end

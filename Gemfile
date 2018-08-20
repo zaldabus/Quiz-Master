@@ -55,10 +55,6 @@ group :development, :test do
   # Backend testing for Rails
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  # Gems for frontend testing support
-  gem 'teaspoon'
-  gem 'teaspoon-mocha'
-  gem 'magic_lamp'
 end
 
 group :development do
@@ -82,10 +78,6 @@ group :test do
   # Rspec helper libraries
   gem 'rspec-its'
   gem 'shoulda-matchers'
-  # Ensure clean database for frontend testing
-  gem 'database_cleaner'
-  gem 'poltergeist'
-  gem 'phantomjs', '1.9.7'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
