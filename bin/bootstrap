@@ -41,4 +41,4 @@ echo "*** Installing foreman..."
 gem install foreman
 
 echo "Booting up with foreman..."
-foreman start -f Procfile.dev
+foreman start -f Procfile.dev-server
