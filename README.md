@@ -12,7 +12,7 @@ bin/bootstrap
 ```
 
 # Bootup
-This app uses Foreman to manage Rails and React simultaneously. The bootup this program run the following:
+This app uses Foreman to manage Rails and React simultaneously. To bootup this program run the following:
 ```
 foreman start -f Procfile.dev
 ```
